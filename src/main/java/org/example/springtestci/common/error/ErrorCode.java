@@ -22,6 +22,10 @@ public enum ErrorCode {
       HttpStatus.CONFLICT, "DOC_007", "개인정보 재마스킹이 필요한 증빙은 교체하기 전까지 열람할 수 없습니다."),
   DOCUMENT_STORAGE_UNAVAILABLE(
       HttpStatus.SERVICE_UNAVAILABLE, "DOC_008", "파일 저장소를 아직 사용할 수 없습니다. 잠시 후 다시 시도해 주세요."),
+  DOCUMENT_EXTRACTION_ACTIVE(
+      HttpStatus.CONFLICT, "DOC_009", "이미 진행 중이거나 완료된 AI 추출이 있습니다. 반려하거나 실패한 뒤에 다시 요청할 수 있습니다."),
+  DOCUMENT_AI_UNAVAILABLE(
+      HttpStatus.SERVICE_UNAVAILABLE, "DOC_010", "AI 추출 기능을 아직 사용할 수 없습니다. 잠시 후 다시 시도해 주세요."),
   INTERNAL_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "COMMON_999", "서버 오류가 발생했습니다.");
 
   private final HttpStatus status;
